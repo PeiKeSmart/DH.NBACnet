@@ -1,0 +1,79 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net45</TargetFrameworks>
+    <AssemblyTitle>BACnet协议</AssemblyTitle>
+    <Description>BACnet楼宇自动化</Description>
+    <Company>湖北登灏科技有限公司</Company>
+    <Copyright>©2020-2024 湖北登灏科技有限公司</Copyright>
+    <VersionPrefix>1.0</VersionPrefix>
+    <VersionSuffix>$([System.DateTime]::Now.ToString(`yyyy.MMdd`))</VersionSuffix>
+    <Version>$(VersionPrefix).$(VersionSuffix)</Version>
+    <FileVersion>$(Version)</FileVersion>
+    <AssemblyVersion>$(VersionPrefix).*</AssemblyVersion>
+    <Deterministic>false</Deterministic>
+    <OutputPath>..\Bin</OutputPath>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <!--<IsPackable>true</IsPackable>-->
+    <PackageId>$(AssemblyName)</PackageId>
+    <Authors>$(Company)</Authors>
+    <PackageProjectUrl>https://www.haocoding.com/</PackageProjectUrl>
+    <PackageIcon>DH.png</PackageIcon>
+    <RepositoryUrl>https://github.com/PeiKeSmart/DH.NBACnet</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>物联网;IoT;边缘计算;Edge;湖北登灏科技有限公司;DH组件;DH;PLC;BACnet;$(AssemblyName)</PackageTags>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageReadmeFile></PackageReadmeFile>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <!--<GeneratePackageOnBuild>true</GeneratePackageOnBuild>-->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Base\BacnetNodeTypes.cs" />
+    <Compile Remove="Base\BacnetObjectDescription.cs" />
+    <Compile Remove="Base\BacnetRestartReason.cs" />
+    <Compile Remove="Base\BacnetServicesSupported.cs" />
+    <Compile Remove="Base\BacnetStatusFlags.cs" />
+    <Compile Remove="Base\BacnetWritePriority.cs" />
+    <Compile Remove="Base\Enums\BacnetBackupState.cs" />
+    <Compile Remove="Base\Enums\BacnetEventEnable.cs" />
+    <Compile Remove="Base\Enums\BacnetFileAccessMethod.cs" />
+    <Compile Remove="Base\Enums\BacnetLimitEnable.cs" />
+    <Compile Remove="Transport\BacnetMstpProtocolTransport.cs" />
+    <Compile Remove="Transport\BacnetPipeTransport.cs" />
+    <Compile Remove="Transport\BacnetPtpProtocolTransport.cs" />
+    <Compile Remove="Transport\BacnetSerialPortTransport.cs" />
+    <Compile Remove="Transport\BacnetTransportEthernet.cs" />
+    <Compile Remove="Transport\IBacnetSerialTransport.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DH.NIoT" Version="3.7.2024.819-beta06380001" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework)' == 'net45' or '$(TargetFramework)' == 'net461'">
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\Doc\DH.png" Link="DH.png" PackagePath="\" />
+  </ItemGroup>
+
+</Project>
