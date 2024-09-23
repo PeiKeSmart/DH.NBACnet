@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DH.NStardust" Version="3.7.2024.918-beta0838" />
+    <PackageReference Include="DH.NStardust" Version="3.91.2024.923-beta0321" />
   </ItemGroup>
 
   <ItemGroup>
