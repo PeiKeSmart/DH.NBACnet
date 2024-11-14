@@ -5,7 +5,7 @@
     <Description>BACnet楼宇自动化</Description>
     <Company>湖北登灏科技有限公司</Company>
     <Copyright>©2020-2024 湖北登灏科技有限公司</Copyright>
-    <VersionPrefix>3.91</VersionPrefix>
+    <VersionPrefix>4.00</VersionPrefix>
     <VersionSuffix>$([System.DateTime]::Now.ToString(`yyyy.MMdd`))</VersionSuffix>
     <Version>$(VersionPrefix).$(VersionSuffix)</Version>
     <FileVersion>$(Version)</FileVersion>
@@ -57,7 +57,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DH.NIoT" Version="3.91.2024.1109-beta0250" />
+    <PackageReference Include="DH.NIoT" Version="4.0.2024.1114-beta0742" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
