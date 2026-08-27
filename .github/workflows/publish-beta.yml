@@ -16,10 +16,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Setup .NET
+    - name: Setup dotNET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 9.x
+        dotnet-version: |
+          6.x
+          7.x
+          8.x
+          9.x
     - name: Restore
       run: |
         dotnet restore DH.NBACnet/DH.NBACnet.csproj
