@@ -1,10 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO.BACnet;
 using System.IO.BACnet.Serialize;
 using System.IO.BACnet.Storage;
 using Xunit;
-
 using BacObject = System.IO.BACnet.Storage.Object;
 
 namespace UnitTest;

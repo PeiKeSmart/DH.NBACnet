@@ -1,4 +1,4 @@
-﻿using System.IO.BACnet;
+using System.IO.BACnet;
 using NewLife.BACnet.Protocols;
 using Xunit;
 

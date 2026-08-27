@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO.BACnet;
 using System.IO.BACnet.Serialize;
 using Xunit;
