@@ -53,7 +53,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DH.NIoT" Version="4.24.2026.705-beta0600" />
+    <PackageReference Include="DH.NIoT" Version="4.25.2026.827-beta0431" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.400">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
