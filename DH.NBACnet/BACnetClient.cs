@@ -1,5 +1,6 @@
 ﻿using System.IO.BACnet.Serialize;
 using System.Net;
+
 using NewLife;
 using NewLife.Log;
 
@@ -480,7 +481,7 @@ public class BacnetClient : IDisposable
 
     protected void ProcessUnconfirmedServiceRequest(BacnetAddress address, BacnetPduTypes type, BacnetUnconfirmedServices service, Byte[] buffer, Int32 offset, Int32 length)
     {
-        using var span = Tracer?.NewSpan($"bac:Receive:{service.ToString().TrimStart("SERVICE_UNCONFIRMED_")}", new { address, type, length });
+        using var span = Tracer?.NewSpan($"bac:Receive:{service.ToString().Replace("SERVICE_UNCONFIRMED_", String.Empty)}", new { address, type, length });
         try
         {
             Log.Debug("<=[{0}]: {1}", address, service);
@@ -2688,7 +2689,8 @@ public class BacnetClient : IDisposable
             }
 
             //increment before ack can do so (race condition)
-            unchecked { segmentation.sequence_number++; };
+            unchecked { segmentation.sequence_number++; }
+            ;
         }
 
         //send
