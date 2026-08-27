@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
@@ -23,6 +23,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DH.NBACnet\DH.NBACnet.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="TestDeviceDescriptor.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
